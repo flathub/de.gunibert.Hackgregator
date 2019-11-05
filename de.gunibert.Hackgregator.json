@@ -57,7 +57,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.com/gunibert/hackgregator.git",
-                    "commit" : "ac019e492cbf4703ae8324be58640434d2986137"
+                    "commit" : "d0ef91aae5d7c87102f3a15e87bf00282a22fe9c"
                 }
             ]
         }
