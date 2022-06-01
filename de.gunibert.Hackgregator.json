@@ -1,8 +1,11 @@
 {
     "app-id": "de.gunibert.Hackgregator",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "40",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
     "command": "hackgregator",
     "finish-args": [
         "--share=ipc",
@@ -11,6 +14,12 @@
         "--share=network",
         "--device=dri"
     ],
+    "build-options" : {
+        "append-path" : "/usr/lib/sdk/rust-stable/bin",
+        "build-args" : [
+            "--share=network"
+        ]
+    },
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
@@ -23,17 +32,18 @@
         "*.a"
     ],
     "modules": [
+    	"webkit.json",
         {
             "name": "hackgregator",
             "buildsystem" : "meson",
             "config-opts" : [
-                "--buildtype=release"
+                "-Dprofile=default"
             ],
             "sources": [
                 {
                     "type" : "git",
                     "url" : "https://gitlab.com/gunibert/hackgregator.git",
-                    "tag" : "0.3.0"
+                    "tag" : "0.4.0"
                 }
             ]
         }
