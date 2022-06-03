@@ -15,10 +15,7 @@
         "--device=dri"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin",
-        "build-args" : [
-            "--share=network"
-        ]
+        "append-path" : "/usr/lib/sdk/rust-stable/bin"
     },
     "cleanup": [
         "/include",
@@ -41,9 +38,11 @@
             ],
             "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.com/gunibert/hackgregator.git",
-                    "tag" : "0.4.0"
+                    "type" : "archive",
+                    "url" : "https://gunibert.de/cloud/index.php/s/xHHy9M78E47iFMX/download/hackgregator-0.4.0.zip",
+                    "sha256" : "84c9b0d2d4d0d168d0e86109b2f9fad0e897672038a94484efc545f06886b991",
+                    "archive-type" : "zip",
+                    "strip-components" : 0
                 }
             ]
         }
