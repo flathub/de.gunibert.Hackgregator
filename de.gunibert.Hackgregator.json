@@ -39,8 +39,8 @@
             "sources": [
                 {
                     "type" : "archive",
-                    "url" : "https://gunibert.de/cloud/index.php/s/xHHy9M78E47iFMX/download/hackgregator-0.4.0.zip",
-                    "sha256" : "84c9b0d2d4d0d168d0e86109b2f9fad0e897672038a94484efc545f06886b991",
+                    "url" : "https://gunibert.de/cloud/index.php/s/aCy8zGZsxwB94EW/download/hackgregator-0.4.1.zip",
+                    "sha256" : "d000d4d3e03ebafa37afe71eff5a4a85e79a073309543989775068c1dfea81ff",
                     "archive-type" : "zip",
                     "strip-components" : 0
                 }
