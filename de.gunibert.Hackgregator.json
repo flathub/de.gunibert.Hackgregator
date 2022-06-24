@@ -40,7 +40,7 @@
                 {
                     "type" : "archive",
                     "url" : "https://gunibert.de/cloud/index.php/s/aCy8zGZsxwB94EW/download/hackgregator-0.4.1.zip",
-                    "sha256" : "735f113d1453fb97bea1d84c1868b79b8e8c904f6b1d675c6d33027402548a95",
+                    "sha256" : "d000d4d3e03ebafa37afe71eff5a4a85e79a073309543989775068c1dfea81ff",
                     "archive-type" : "zip",
                     "strip-components" : 0
                 }
