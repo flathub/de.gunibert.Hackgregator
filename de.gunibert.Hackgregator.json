@@ -1,7 +1,7 @@
 {
     "app-id": "de.gunibert.Hackgregator",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -15,7 +15,10 @@
         "--device=dri"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin"
+        "append-path" : "/usr/lib/sdk/rust-stable/bin",
+        "env" : {
+            "CARGO_HOME" : "/run/build/hackgregator/cargo"
+        }
     },
     "cleanup": [
         "/include",
@@ -29,21 +32,23 @@
         "*.a"
     ],
     "modules": [
-    	"webkit.json",
         {
             "name": "hackgregator",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dprofile=default"
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "cargo --offline build --release --verbose",
+                "cargo run --package xtask --bin xtask"
             ],
             "sources": [
                 {
                     "type" : "archive",
-                    "url" : "https://gunibert.de/cloud/index.php/s/aCy8zGZsxwB94EW/download/hackgregator-0.4.1.zip",
-                    "sha256" : "735f113d1453fb97bea1d84c1868b79b8e8c904f6b1d675c6d33027402548a95",
+                    "url": "https://gitlab.com/gunibert/hackgregator/uploads/d793ec9da2c3ab28275bc6fcf759082f/hackgregator-0.5.0.zip",
+                    "sha256": "b7cb514516751f5ab1892a14ca58484052027209894b811403f67c177e19eefe",
                     "archive-type" : "zip",
                     "strip-components" : 0
-                }
+                },
+                "generated-sources.json"
             ]
         }
     ]
